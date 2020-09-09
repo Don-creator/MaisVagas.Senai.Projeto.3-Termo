@@ -29,3 +29,5 @@ INNER JOIN Vaga ON Inscricao.IdInscricao = Vaga.IdVaga
 
 
 
+
+

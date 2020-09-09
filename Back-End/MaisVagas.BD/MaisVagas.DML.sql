@@ -22,9 +22,9 @@ VALUES	('12345122324244',	'1234567',	'2650',	'Alexandre', 'Url',	'Url'),
 INSERT INTO TipoContrato(Nome)
 VALUES	('Tempo Determinado'),('Tempo Indeterminado'),('Home Office'),('Estagio');
 
-INSERT INTO Vaga(NomeVaga, LogoEmpresa, DescricaoVaga, SoftSkills, HardSkills, QualificacaoProfissional, NumeroVagaDisponiveis, NivelExperiencia, Jornada, Setor, Salario, Beneficios, IdEmpresa, IdTipoContrato)
-VALUES	('FullStack', 'img', 'Vaga que busca Desenvolvedores Full Stack com algumas especificações, sendo elas, Ingles intermediario, Analise de dados e Redes e Computadores.', 'Proatividade, Flexibilidade e Criatividade.',	'Tecnicas Gerais, Detecções e Soluções de Problemas', 'Sr' , '23','8h', 'Full Stack', 'CLT',	'1900',	'Vt+Vr',1, 1),
-		('Estagio',	'img', 'Vaga que busca estagiarios Desenvolvimentos de Sistemas com algumas especificações, sendo elas, Ingles intermediario, Armazenamento de dados e Big Data.', 'Comunicabilidade, Visão Global de Negocios', 'Atualização de Habilidades e  User Experience Design',  'Sr' , '12' , '12', 'Desenvolvedor',	'Estagio',	'1500',	'Vt+Vr',2, 4);
+INSERT INTO Vaga(NomeVaga, LogoEmpresa, DescricaoVaga, SoftSkills, HardSkills, QualificacaoProfissional, NumeroVagaDisponiveis, NivelExperiencia, Jornada, Setor, Salario, Beneficios, Verificacao, IdEmpresa, IdTipoContrato)
+VALUES	('FullStack', 'img', 'Vaga que busca Desenvolvedores Full Stack com algumas especificações, sendo elas, Ingles intermediario, Analise de dados e Redes e Computadores.', 'Proatividade, Flexibilidade e Criatividade.',	'Tecnicas Gerais, Detecções e Soluções de Problemas', 'Sr' , '23','8h', 'Full Stack', 'CLT',	'1900',	'Vt+Vr', 0,1, 1),
+		('Estagio',	'img', 'Vaga que busca estagiarios Desenvolvimentos de Sistemas com algumas especificações, sendo elas, Ingles intermediario, Armazenamento de dados e Big Data.', 'Comunicabilidade, Visão Global de Negocios', 'Atualização de Habilidades e  User Experience Design',  'Sr' , '12' , '12', 'Desenvolvedor',	'Estagio',	'1500',	'Vt+Vr', 1,2, 4);
 
 
 INSERT INTO Curso(Nome, Termo, Turno)
@@ -44,12 +44,19 @@ INSERT INTO Situacao(Nome)
 VALUES ('Concluido'), ('Pendente'), ('Cancelado');
 
 INSERT INTO Contrato(DataInicio, DataTermino, DiasContrato, ResponsavelEstagio, DescriçaoEstagio, DescriçãoCancelamento, IdTipoContrato ,IdSituacao, IdVaga, IdCandidato)
-VALUES	('04/09/2020','04/09/2021', '365', 'Thiago', 'O Aluno efetuará atividades tecnicas sobre Front-End e Back-End','Opcional', 1 , 2, 2, 1),
-		('05/09/2020','05/09/2021', '365', 'Kaique', 'O Aluno efetuará atividades tecnicas sobre Front-End e Back-End','Opcional', 4 ,2, 2, 2);
+VALUES	('04/09/2020','04/09/2021', '365', 'Thiago', 'O Aluno efetuará atividades tecnicas sobre Front-End e Back-End','Opcional', 1 , 2, 5, 1),
+		('05/09/2020','05/09/2021', '365', 'Kaique', 'O Aluno efetuará atividades tecnicas sobre Front-End e Back-End','Opcional', 4 ,2, 6, 2);
 
 
 INSERT INTO Inscricao(IdCandidato, IdVaga)
-VALUES (2, 2);
+VALUES (1, 6);
+
+INSERT INTO VagasFavoritas(IdVaga)
+VALUES (6);
+
+
+
+
 
 
 		

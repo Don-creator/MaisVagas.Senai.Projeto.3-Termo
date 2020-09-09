@@ -1,9 +1,6 @@
- CREATE DATABASE MaisVagas
+CREATE DATABASE MaisVagas
 
 USE MaisVagas
-
-
-
 
 CREATE TABLE TipoUsuario (
     IdTipoUsuario INT IDENTITY PRIMARY KEY,
@@ -61,6 +58,7 @@ CREATE TABLE Vaga (
     Setor VARCHAR(100) NOT NULL,
     Salario BIGINT NOT NULL,
     Beneficios VARCHAR(100),
+	Verificacao	BIT,
 	IdTipoContrato INT FOREIGN KEY REFERENCES TipoContrato(IdTipoContrato),
     IdEmpresa INT FOREIGN KEY REFERENCES Empresa(IdEmpresa)
 );
@@ -89,6 +87,13 @@ CREATE TABLE Candidato (
 
 GO
 
+CREATE TABLE Situacao(
+	IdSituacao INT PRIMARY KEY IDENTITY,
+	Nome	VARCHAR(50),
+);
+
+GO
+
 CREATE TABLE Contrato (
 	IdContrato	INT PRIMARY KEY IDENTITY,
 	DataInicio	DATE NOT NULL,
@@ -103,12 +108,6 @@ CREATE TABLE Contrato (
 	IdCandidato	INT FOREIGN KEY REFERENCES Candidato(IdCandidato)
 );
 
-GO
-
-CREATE TABLE Situacao(
-	IdSituacao INT PRIMARY KEY IDENTITY,
-	Nome	VARCHAR(50),
-);
 
 GO
 
@@ -127,6 +126,11 @@ CREATE TABLE Administrador (
 );
 
 GO
+
+CREATE TABLE VagasFavoritas(
+	IdVagasFavoritas INT PRIMARY KEY IDENTITY,
+	IdVaga		INT FOREIGN KEY REFERENCES Vaga(IdVaga)
+);
 
 SELECT * FROM TipoUsuario
 SELECT * FROM Usuario
